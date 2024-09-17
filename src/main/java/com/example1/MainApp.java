@@ -8,19 +8,22 @@ public class MainApp {
     public static void main(String[] args) {
         StudentDAO studentDAO = new StudentDAO();
 
-        // Create a new student
+
         Student student = new Student("Soundhur", "G", "soundhur.g@example.com");
         studentDAO.saveStudent(student);
 
-        // Retrieve the student by ID
+        Student student1 = new Student("Varun","S","Varuns.s@example.com");
+
+
         Student retrievedStudent = studentDAO.getStudent(student.getId());
         System.out.println("Retrieved: " + retrievedStudent.getFirstName());
 
-        // Update the student's email
         studentDAO.updateStudent(student.getId(), "soundhurg@gmail.com");
 
-        // Delete the student
-        //studentDAO.deleteStudent(student.getId());
+        studentDAO.updateStudent(student1.getId(), "varuns@gmail.com");
+
+
+        studentDAO.deleteStudent(student.getId());
     }
 }
 
